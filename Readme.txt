@@ -1,4 +1,4 @@
-Program ini menggunakan 2 framework yaitu Vue JS sebagai Front End dan Springboot sebagai backend.
+Program ini menggunakan 2 framework yaitu Vue JS sebagai Front End dan Springboot sebagai Back End.
 
 
 Cara menjalankan:
