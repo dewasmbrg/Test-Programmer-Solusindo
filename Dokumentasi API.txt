@@ -1,0 +1,39 @@
+
+Dokumentasi API:
+
+server: http://localhost:8081
+database name: test_solusindo
+
+Barang
+- add barang: /api/barang
+contoh body: {
+    "nama_barang": "Nextar 33",
+    "satuan": "Kotak",
+    "kategori": "Makanan",
+    "harga_jual": "22000",
+    "harga_beli": "20000"
+}
+- get all barang: /api/barang
+- get one barang: /api/barang/:id
+- update barang: /api/barang
+contoh body:{
+    "kode_barang": 5,
+    "nama_barang": "Nextar 2 Edited",
+    "satuan": "Kotak",
+    "kategori": "Makanan",
+    "harga_jual": "22000",
+    "harga_beli": "20000"
+}
+- delete barang: /api/barang/:id
+
+Penjualan
+- add penjualan: /api/penjualan
+contoh body {
+    "nama_konsumen": "Kevin",
+    "jumlah": "3",
+    "harga_satuan": "100000",
+    "harga_total": "200000"
+}
+- get all penjualan: /api/penjualan
+- get one penjualan: /api/penjualan/:id
+- delete penjualan: /api/penjualan/:id
