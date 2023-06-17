@@ -7,7 +7,7 @@ Cara menjalankan:
 - Cocokkan konfigurasi database mysql anda dengan application properties pada springboot di dalam folder backend
 - Jalankan backend menggunakan perintah : "mvn spring-boot:run"
 (pastikan path terminal anda didalam folder backend)
-- Masuk ke folder backend menggunakan terminal, jika anda belum memiliki node modulesnya, lakukan instalasinya menggunakan perintah "pnpm i" (bukan npm) dikarenakan disini saya menggunakan konfigurasi pnpm.
+- Masuk ke folder frontend menggunakan terminal, jika anda belum memiliki node modulesnya, lakukan instalasinya menggunakan perintah "pnpm i" (bukan npm) dikarenakan disini saya menggunakan konfigurasi pnpm.
 - Jika semua dependency package sudah terinstall, ketik perintah "pnpm run serve" untuk menjalankan frontendnya
 - Lalu akan muncul local url yang bisa anda akses.
 - Selamat mencoba
