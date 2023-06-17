@@ -2,7 +2,6 @@
   <div class="hello">
     <h1>Barang List</h1>
     <form @submit.prevent="addBarang">
-      <!-- Input fields for adding a new barang -->
       <input
         type="text"
         v-model="newBarang.nama_barang"
@@ -36,9 +35,7 @@
       <button type="submit">Add Barang</button>
     </form>
 
-    <!-- Table displaying the list of barangs -->
     <table class="table-barang">
-      <!-- Table headers -->
       <thead>
         <tr>
           <th>No</th>
@@ -51,9 +48,7 @@
         </tr>
       </thead>
 
-      <!-- Table body -->
       <tbody>
-        <!-- Iterate through the barangs array -->
         <tr v-for="(barang, index) in barangs" :key="barang.kode_barang">
           <td>{{ index + 1 }}</td>
           <td>{{ barang.nama_barang }}</td>
@@ -73,7 +68,6 @@
 
     <h1>Penjualan List</h1>
     <form @submit.prevent="addPenjualan">
-      <!-- Input fields for adding a new penjualan -->
       <input
         type="text"
         v-model="newPenjualan.nama_konsumen"
@@ -107,9 +101,7 @@
       <button type="submit">Add Penjualan</button>
     </form>
 
-    <!-- Table displaying the list of penjualans -->
     <table class="table-penjualan">
-      <!-- Table headers -->
       <thead>
         <tr>
           <th>No</th>
@@ -121,9 +113,7 @@
         </tr>
       </thead>
 
-      <!-- Table body -->
       <tbody>
-        <!-- Iterate through the penjualans array -->
         <tr v-for="(penjualan, index) in penjualans" :key="penjualan.id">
           <td>{{ index + 1 }}</td>
           <td>{{ penjualan.nama_konsumen }}</td>
@@ -131,7 +121,6 @@
           <td>{{ penjualan.harga_satuan }}</td>
           <td>{{ penjualan.harga_total }}</td>
           <td>
-            <!-- Delete button -->
             <button @click="deletePenjualan(penjualan.id)">Delete</button>
           </td>
         </tr>
@@ -167,9 +156,7 @@ export default {
     this.fetchPenjualans();
   },
   methods: {
-    // Barang Methods
     fetchBarangs() {
-      // Make a GET request to retrieve the data from the API
       fetch("http://localhost:8081/api/barang")
         .then((response) => response.json())
         .then((data) => {
@@ -180,7 +167,6 @@ export default {
         });
     },
     addBarang() {
-      // Make a POST request to add a new barang
       fetch("http://localhost:8081/api/barang", {
         method: "POST",
         headers: {
@@ -201,7 +187,6 @@ export default {
       this.editingBarang = barang;
     },
     updateBarang() {
-      // Make a PUT request to update the barang
       fetch("http://localhost:8081/api/barang", {
         method: "PUT",
         headers: {
@@ -224,7 +209,6 @@ export default {
         });
     },
     deleteBarang(kode_barang) {
-      // Make a DELETE request to delete the barang
       fetch(`http://localhost:8081/api/barang/${kode_barang}`, {
         method: "DELETE",
       })
@@ -247,9 +231,7 @@ export default {
       };
     },
 
-    // Penjualan Methods
     fetchPenjualans() {
-      // Make a GET request to retrieve the penjualan data from the API
       fetch("http://localhost:8081/api/penjualan")
         .then((response) => response.json())
         .then((data) => {
@@ -260,7 +242,6 @@ export default {
         });
     },
     addPenjualan() {
-      // Make a POST request to add a new penjualan
       fetch("http://localhost:8081/api/penjualan", {
         method: "POST",
         headers: {
@@ -278,7 +259,6 @@ export default {
         });
     },
     deletePenjualan(id) {
-      // Make a DELETE request to delete the penjualan
       fetch(`http://localhost:8081/api/penjualan/${id}`, {
         method: "DELETE",
       })
@@ -303,7 +283,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
